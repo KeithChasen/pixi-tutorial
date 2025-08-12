@@ -24,6 +24,15 @@ import {
 			color: 0x00ff00,
 		});
 
+	rectangle.eventMode = 'static';
+	rectangle.cursor = 'pointer';
+	rectangle.on('mousedown', moveRect);
+
+	function moveRect() {
+		rectangle.x += 10;
+		rectangle.y += 10;
+	}
+
 	const star = new Graphics()
 		.star(1000, 250, 12, 80, 2)
 		.fill({ color: 0xffffff });
