@@ -1,4 +1,11 @@
-import { Application, Graphics, Text, TextStyle } from 'pixi.js';
+import {
+	Application,
+	Graphics,
+	Text,
+	TextStyle,
+	Assets,
+	Sprite,
+} from 'pixi.js';
 
 (async () => {
 	const app = new Application();
@@ -35,6 +42,16 @@ import { Application, Graphics, Text, TextStyle } from 'pixi.js';
 		style,
 	});
 	app.stage.addChild(text);
+
+	const texture = await Assets.load('/images/logo.jpg');
+
+	const sprite = new Sprite(texture);
+	sprite.x = 100;
+	sprite.y = 100;
+	sprite.width = 200;
+	sprite.height = 200;
+
+	app.stage.addChild(sprite);
 
 	document.body.appendChild(app.canvas);
 })();
