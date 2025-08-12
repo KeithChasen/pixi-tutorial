@@ -65,5 +65,18 @@ import {
 
 	app.stage.addChild(sprite);
 
+	const circle = new Graphics();
+
+	app.ticker.add(() => {
+		circle
+			.circle(
+				Math.random() * app.screen.width,
+				Math.random() * app.screen.height,
+				5
+			)
+			.fill({ color: 0xffffff });
+		app.stage.addChild(circle);
+	});
+
 	document.body.appendChild(app.canvas);
 })();
