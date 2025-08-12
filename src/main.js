@@ -41,6 +41,9 @@ import {
 		text: 'Hello World',
 		style,
 	});
+
+	text.position.set(350, 100);
+
 	app.stage.addChild(text);
 
 	const texture = await Assets.load('/images/logo.jpg');
