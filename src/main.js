@@ -1,4 +1,4 @@
-import { Application, Graphics } from 'pixi.js';
+import { Application, Graphics, Text, TextStyle } from 'pixi.js';
 
 (async () => {
 	const app = new Application();
@@ -23,6 +23,18 @@ import { Application, Graphics } from 'pixi.js';
 
 	app.stage.addChild(rectangle);
 	app.stage.addChild(star);
+
+	const style = new TextStyle({
+		fontSize: 60,
+		fontWeight: 'bold',
+		fill: 0xffffff,
+	});
+
+	const text = new Text({
+		text: 'Hello World',
+		style,
+	});
+	app.stage.addChild(text);
 
 	document.body.appendChild(app.canvas);
 })();
